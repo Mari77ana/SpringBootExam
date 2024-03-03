@@ -66,7 +66,7 @@ public class User {
         return birthTime;
     }
 
-    public void setBirthTime(Time birthTime) {
+    public void setBirthTime() {
         this.birthTime = birthTime;
 
     }
