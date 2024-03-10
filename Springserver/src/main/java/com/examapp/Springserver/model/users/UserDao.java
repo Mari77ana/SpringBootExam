@@ -33,13 +33,19 @@ public class UserDao {
         return users;
     }
 
-
     public long getUserCount() {
       return repository.count();
 
     }
 
+    public void getUserById(int getUserId ){
+        repository.findById(getUserId);
 
+    }
+
+    public void deleteUserById(int deleteUserId){
+        repository.deleteById(deleteUserId);
+    }
 
 
     public void delete(User user) {

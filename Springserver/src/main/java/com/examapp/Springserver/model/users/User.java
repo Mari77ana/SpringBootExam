@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 
 import java.sql.Time;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 // Create Table with PrimaryKey -> unique user by automatically
 // generating id to each user in Db
@@ -20,7 +21,7 @@ public class User {
     private String lastname;
     private String location;
     private LocalDate birthDate;
-    private Time birthTime;
+    private LocalTime birthTime; // changed from Time -> LocalTime
 
     public int getId() {
         return id;
@@ -62,12 +63,15 @@ public class User {
         this.birthDate = birthDate;
     }
 
+    /*
     public Time getBirthTime() {
         return birthTime;
     }
+    Hade this at first with Time
+     */
 
-    public void setBirthTime() {
-        this.birthTime = birthTime;
+    public void setBirthTime(LocalTime localTime) {
+        this.birthTime = localTime;
 
     }
 
