@@ -21,8 +21,8 @@ public class UserDao {
     @Autowired
     private UserRepository repository; // no need new to instantiate
 
-    public void save(User user) {
-        repository.save(user);
+    public User save(User user) {
+        return repository.save(user); // returns response Id in postman
     }
 
 

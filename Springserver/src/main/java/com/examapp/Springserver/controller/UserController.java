@@ -23,9 +23,9 @@ public class UserController {
 
     }
 
-    @PostMapping("/user/get-all")
-    public void save(@RequestBody User user) {
-        userDao.save(user);
+    @PostMapping("/user/save")
+    public User save(@RequestBody User user) {
+        return userDao.save(user);
     }
 
 

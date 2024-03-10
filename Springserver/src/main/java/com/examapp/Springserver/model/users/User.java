@@ -1,5 +1,6 @@
 package com.examapp.Springserver.model.users;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,6 +22,8 @@ public class User {
     private String lastname;
     private String location;
     private LocalDate birthDate;
+
+    @JsonFormat(pattern = "HH:mm:ss") // added converter for response in Postman
     private LocalTime birthTime; // changed from Time -> LocalTime
 
     public int getId() {
