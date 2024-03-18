@@ -4,10 +4,7 @@ package com.examapp.Springserver.controller;
 import com.examapp.Springserver.model.users.User;
 import com.examapp.Springserver.model.users.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,6 +23,12 @@ public class UserController {
     @PostMapping("/user/save")
     public User save(@RequestBody User user) {
         return userDao.save(user);
+    }
+
+
+    @GetMapping("/user/get/{userId}")
+    public User getUserById(@PathVariable int userId) {
+        return userDao.getUserById(userId);
     }
 
 

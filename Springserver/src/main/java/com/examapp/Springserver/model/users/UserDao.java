@@ -38,8 +38,8 @@ public class UserDao {
 
     }
 
-    public void getUserById(int getUserId ){
-        repository.findById(getUserId);
+    public User getUserById(int getUserId ){
+       return repository.findById(getUserId).orElse(null);
 
     }
 
